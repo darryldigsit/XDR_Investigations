@@ -25,7 +25,9 @@ An investigation will detect connections to **169.150.203.14** and URL: "https:/
 A lesson learned as you walk through the detections is that you can't trust file names alone. The hash to notepad will prove it is Powershell in Malware Analytics. EDR is not fooled and detects the activity correctly despite the Masquerading technique.
 
 **Demo:**
+
 Install the XDR Ribbon plug-in into your browser.
+
 Navigate to the latest research on this threat. Use SANS:  https://isc.sans.edu/diary/vBulletin+Exploits+CVE202548827+CVE202548828/32006
 
 Launch the XDR Ribbon browser plug-in. 
