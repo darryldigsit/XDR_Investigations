@@ -3,6 +3,7 @@ If you would like to demonstrate XDR actual Threat Hunting capabilities, this is
 This windows batch file will create a security event that can be used to investigate a specific SANS reported threat
 
 **Scenario:**
+
 Cisco XDR has a browser plug in that can parse observables from a html page, deliberate immediate dispositions and run a one-click investigation to see if any owned assets have made a connection. This can show how fast XDR detects and what an XDR Investigation looks like when there is a positive hit.
 
 **Preparation for the demo:**
@@ -28,18 +29,11 @@ A lesson learned as you walk through the detections is that you can't trust file
 **Demo:**
 
 Install the XDR Ribbon plug-in into your browser.
-
 Navigate to the latest research on this threat. Use SANS:  https://isc.sans.edu/diary/vBulletin+Exploits+CVE202548827+CVE202548828/32006
-
 Launch the XDR Ribbon browser plug-in. 
-
 Locate: "Find Observables on Page" button and scrape the page of observables. 
-
 Select all of the Malicious (red) and Suspicious (orange) observables.
-
 Run an investigation on the selected observables. This may take 60 seconds. 
-
 You may see that the file itself shows EDR alert when copied to disk and executed. You can pivot on the host and see the full incident.
-
 
 For issues or questions, contact Darryl Hicks:  darhicks@cisco.com
