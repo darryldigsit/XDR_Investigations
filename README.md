@@ -33,11 +33,11 @@ Cisco XDR has a browser plug in that can parse observables from a html page, del
 **Demo:**
 
 • Install the XDR Ribbon plug-in into your browser.
-• Navigate to the latest research on this threat. Use SANS:  https://isc.sans.edu/diary/vBulletin+Exploits+CVE202548827+CVE202548828/32006
-• Launch the XDR Ribbon browser plug-in. 
-• Locate: "Find Observables on Page" button and scrape the page of observables. 
+• Navigate to the latest research on this threat. https://isc.sans.edu/diary/vBulletin+Exploits+CVE202548827+CVE202548828/32006
+• Launch the XDR Ribbon browser plug-in.
+• Locate: "Find Observables on Page" button and scrape the page of observables.
 • Select all of the Malicious (red) and Suspicious (orange) observables.
-• Run an investigation on the selected observables. This may take 60 seconds. 
+• Run an investigation on the selected observables. This may take 60 seconds.
 • You may see that the file itself shows EDR alert when copied to disk and executed. You can pivot on the host and see the full incident.
 
 For issues or questions, contact Darryl Hicks:  darhicks@cisco.com
