@@ -7,8 +7,9 @@ This windows batch file will create a security event that can be used to investi
 Cisco XDR has a browser plug in that can parse observables from a html page, deliberate immediate dispositions and run a one-click investigation to see if any owned assets have made a connection. This can show how fast XDR detects and what an XDR Investigation looks like when there is a positive hit.
 
 **Preparation for the demo:**
-Run this file on a Windows OS from admin command line (it will pause at the end to see results). 
-EDR needs to be in Audit Mode
+
+• Run this file on a Windows OS from admin command line (it will pause at the end to see results). 
+• EDR needs to be in Audit Mode
 
 **This batch file will:**
 1) Elevate privileges without prompt
@@ -22,9 +23,9 @@ EDR needs to be in Audit Mode
 
 **This will detect**: 
 
-Mimikatz indicators of compromise with password hash dump.
-An investigation will detect connections to **169.150.203.14** and URL: "https://forum.vbulletin.com/forum/vbulletin-announcements/vbulletin-announcements_aa/4491049-security-patch-released-for-vbulletin-6-x-and-5-7-5"
-A lesson learned as you walk through the detections is that you can't trust file names alone. The hash to notepad will prove it is Powershell in Malware Analytics. EDR is not fooled and detects the activity correctly despite the Masquerading technique.
+• Mimikatz indicators of compromise with password hash dump.
+• An investigation will detect connections to **169.150.203.14** and URL: "https://forum.vbulletin.com/forum/vbulletin-announcements/vbulletin-announcements_aa/4491049-security-patch-released-for-vbulletin-6-x-and-5-7-5"
+• A lesson learned as you walk through the detections is that you can't trust file names alone. The hash to notepad will prove it is Powershell in Malware Analytics. EDR is not fooled and detects the activity correctly despite the Masquerading technique.
 
 **Demo:**
 
