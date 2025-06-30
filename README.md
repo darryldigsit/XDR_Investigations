@@ -20,6 +20,7 @@ EDR needs to be in Audit Mode
 8) optionally removing the security logs
 
 **This will detect**: 
+
 Mimikatz indicators of compromise with password hash dump.
 An investigation will detect connections to **169.150.203.14** and URL: "https://forum.vbulletin.com/forum/vbulletin-announcements/vbulletin-announcements_aa/4491049-security-patch-released-for-vbulletin-6-x-and-5-7-5"
 A lesson learned as you walk through the detections is that you can't trust file names alone. The hash to notepad will prove it is Powershell in Malware Analytics. EDR is not fooled and detects the activity correctly despite the Masquerading technique.
@@ -31,10 +32,14 @@ Install the XDR Ribbon plug-in into your browser.
 Navigate to the latest research on this threat. Use SANS:  https://isc.sans.edu/diary/vBulletin+Exploits+CVE202548827+CVE202548828/32006
 
 Launch the XDR Ribbon browser plug-in. 
+
 Locate: "Find Observables on Page" button and scrape the page of observables. 
+
 Select all of the Malicious (red) and Suspicious (orange) observables.
+
 Run an investigation on the selected observables. This may take 60 seconds. 
 
 You may see that the file itself shows EDR alert when copied to disk and executed. You can pivot on the host and see the full incident.
+
 
 For issues or questions, contact Darryl Hicks:  darhicks@cisco.com
