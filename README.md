@@ -8,7 +8,7 @@ Cisco XDR has a browser plug in that can parse observables from a html page, del
 
 **Preparation for the demo:**
 
-• Run this file on a Windows OS from admin command line (it will pause at the end to see results). 
+• Run this file on a Windows OS from admin command line (it will pause at the end to see results).
 • EDR needs to be in Audit Mode
 
 **This batch file will:**
