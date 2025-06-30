@@ -22,9 +22,9 @@ Demo:
 Install the XDR Ribbon plug-in into your browser
 Naviage to the latest research on this threat
     Use SANS:  https://isc.sans.edu/diary/vBulletin+Exploits+CVE202548827+CVE202548828/32006
-Launch the XDR Ribbon browser plug-in
-Locate: "Find Observables on Page" button and scrape the page of observables
-Select all of the observables and run an investigation
+Launch the XDR Ribbon browser plug-in. 
+Locate: "Find Observables on Page" button and scrape the page of observables. 
+Select all of the observables and run an investigation. 
 
 If the batch file was previously ran, you will see a connection from the host you ran the file on along with any other integrated associations. You can pivot on the host and see the full incident.
 
