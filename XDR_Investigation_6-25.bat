@@ -7,6 +7,8 @@ echo.
 Echo The following script will trigger events from the following research:
 Echo https://isc.sans.edu/diary/vBulletin+Exploits+CVE202548827+CVE202548828/32006/
 Echo.
+Echo Investigation will detect connections to IP: 169.150.203.14 and URL: https://forum.vbulletin.com/forum/vbulletin-announcements/vbulletin-announcements_aa/4491049-security-patch-released-for-vbulletin-6-x-and-5-7-5
+Echo.
 Echo.
 :: Process creates a test directory, copies powershell to that directory as notepad, the attempts to connect to a malicious URL and IP, then deletes the test directory.
 :: powershell.exe Start-Process cmd.exe -Verb runAs
