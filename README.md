@@ -2,6 +2,9 @@
 If you would like to demonstrate XDR actual Threat Hunting capabilities, this is for you!
 This windows batch file will create a security event that can be used to investigate a specific SANS reported threat
 
+Demonstration video: https://youtu.be/niDtgc1QiYY
+Setting up the demo: https://youtu.be/JgcaX93ikB0
+
 **Scenario:**
 
 Cisco XDR has a browser plug in that can parse observables from a html page, deliberate immediate dispositions and run a one-click investigation to see if any owned assets have made a connection. This can show how fast XDR detects and what an XDR Investigation looks like when there is a positive hit.
