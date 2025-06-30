@@ -16,7 +16,7 @@ Cisco XDR has a browser plug in that can parse observables from a html page, del
 **This batch file will:**
 1) Elevate privileges without prompt
 2) Make a directory called c:\test
-3) copy Powershell to that directory
+3) copy Powershell to that directory as notepad.exe
 4) start browser session to a benign location within the research
 5) attempts a http web-request to download a non-existing malicious file from a blocked IP
 6) attempts to invoke Mimikatz from a non-existent GitHub repository
