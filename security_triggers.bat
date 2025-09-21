@@ -1,10 +1,9 @@
 @echo off
-echo XX    XX DDDDDD   RRRRRR
-echo  XX  XX  DD   DD  RR   RR
-echo   XXXX   DD    DD RR   RR
-echo   XXXX   DD    DD RRRRRR
-echo  XX  XX  DD   DD  RR  RR
-echo XX    XX DDDDDD   RR   RR
+echo     / \__
+echo    (    @\___
+echo    /         O
+echo   /   (_____/
+echo   /_____/   U
 echo.
 echo For details or assistance with this script, contact Darryl Hicks (darhicks@cisco.com)
 echo.
@@ -14,20 +13,20 @@ setlocal enabledelayedexpansion
 :menu
 cls
 echo Choose an option:
-echo 1) EDR trigger
-echo 2) NVM trigger
-echo 3) NDR trigger
+echo 1) Endpoint (Antivirus) trigger
+echo 2) Endpoint Kernal trigger
+echo 3) Network trigger
 echo 4) Firewall trigger
-echo 5) ALL TRIGGERS
-::echo 6) Umbrella Trigger
-set /p choice=Enter your choice (1-5):
+echo 5) ALL 4 TRIGGERS
+echo 6) DNS Trigger
+set /p choice=Enter your choice (1-6):
 
 if "%choice%"=="1" goto edr
 if "%choice%"=="2" goto nvm
 if "%choice%"=="3" goto ndr
 if "%choice%"=="4" goto firewall
 if "%choice%"=="5" goto all
-::if "%choice%"=="6" goto umbrella
+if "%choice%"=="6" goto umbrella
 
 echo Invalid choice. Please try again.
 pause
@@ -76,13 +75,13 @@ echo Tasks completed.
 goto end
 
 :umbrella
-::echo.
-::echo.
-::echo This command will Trigger DNS security by attempting a wget to a malicous looking (benign) site internetbadguys.com. 
-::echo It is expected this attempt will fail. Please wait.
-::echo.
-::echo.
-::This 146.112.61.107 address is an Umbrella test IP referenced here: ::https://support.umbrella.com/hc/en-us/articles/115001357688-What-are-the-Cisco-Umbrella-Block-Page-IP-Addresses
+echo.
+echo.
+echo This command will Trigger DNS security by attempting a wget to a malicous looking (benign) site internetbadguys.com. 
+echo It is expected this attempt will fail. Please wait.
+echo.
+echo.
+This 146.112.61.107 address is an Umbrella test IP referenced here: ::https://support.umbrella.com/hc/en-us/articles/115001357688-What-are-the-Cisco-Umbrella-Block-Page-IP-Addresses
 
 powershell -c "(new-object System.Net.WebClient).DownloadFile('http://internetbadguys.com/wget.exe','C:\temp\wget.exe')"
 echo.
@@ -125,11 +124,11 @@ echo.
 echo NVM: This trigger will download a picture from Cisco from Cisco into memory, and then remove it using a variable.
 powershell -command "Invoke-WebRequest -Uri 'https://www.cisco.com/content/dam/cisco-cdc/site/images/heroes/homepage/2025/nvidia-cisco-ai-2400x1028.jpg' -Outfile \"$env:TEMP\Wallpaper.jpg\"; Remove-Item \"$env:TEMP\Wallpaper.jpg\""
 ::UMBRELLA
-::echo.
-::echo.
-::echo.
-::powershell -c "(new-object System.Net.WebClient).DownloadFile('http://internetbadguys.com/wget.exe','C:\temp\wget.exe')"
-::echo.
+echo.
+echo.
+echo.
+powershell -c "(new-object System.Net.WebClient).DownloadFile('http://internetbadguys.com/wget.exe','C:\temp\wget.exe')"
+echo.
 ::FIREWALL
 echo.
 echo Firewall: This command will Trigger a Firewall DNS Alert by attempting a wget to a malicous looking (benign) site internetbadguys.com. It is expected this attempt will fail. Please wait.
