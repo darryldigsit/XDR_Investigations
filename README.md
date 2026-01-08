@@ -7,11 +7,11 @@ Setting up the demo: https://youtu.be/JgcaX93ikB0
 
 **Scenario:**
 
-Cisco XDR has a browser plug in that can parse observables from a html page, deliberate immediate dispositions and run a one-click investigation to see if any owned assets have made a connection. This can show how fast XDR detects and what an XDR Investigation looks like when there is a positive hit.
+Cisco XDR has a browser plugin that can parse observables from a html page, deliberate immediate dispositions and run a one-click investigation to see if any owned assets have made a connections. This can show how fast XDR detects and what an XDR Investigation looks like when there is a positive hit.
 
 **Preparation for the demo:**
 
-• Run this file on a Windows OS from admin command line (it will pause at the end to see results).
+• Run the latest batch file on a Windows OS from admin command line (it will pause at the end to see results).
 
 • EDR needs to be in Audit Mode
 
@@ -27,11 +27,11 @@ Cisco XDR has a browser plug in that can parse observables from a html page, del
 8) optionally removing the security logs
 
 
-**This will detect**: 
+**January 2026 version will detect**: 
 
 • Mimikatz indicators of compromise with password hash dump.
 
-• An investigation will detect connections to **169.150.203.14** and URL: "https://forum.vbulletin.com/forum/vbulletin-announcements/vbulletin-announcements_aa/4491049-security-patch-released-for-vbulletin-6-x-and-5-7-5"
+• An investigation will detect connections to **172[.]233[.]67[.]176** and URL: "https://forum.vbulletin.com/forum/vbulletin-announcements/vbulletin-announcements_aa/4491049-security-patch-released-for-vbulletin-6-x-and-5-7-5"
 
 • A lesson learned as you walk through the detections is that you can't trust file names alone. The hash to notepad will prove it is Powershell in Malware Analytics. EDR is not fooled and detects the activity correctly despite the Masquerading technique.
 
@@ -40,7 +40,7 @@ Cisco XDR has a browser plug in that can parse observables from a html page, del
 
 • Install the XDR Ribbon plug-in into your browser.
 
-• Navigate to the latest research on this threat. https://isc.sans.edu/diary/vBulletin+Exploits+CVE202548827+CVE202548828/32006
+• Navigate the browser to: https://blog.talosintelligence.com/uat-9686/
 
 • Launch the XDR Ribbon browser plug-in.
 
