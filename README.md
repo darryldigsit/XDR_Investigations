@@ -1,4 +1,4 @@
-# XDR_Investigations  -  June 2025 release
+# XDR_Investigations  -  January 2026 release
 If you would like to demonstrate XDR actual Threat Hunting capabilities, this is for you!
 This windows batch file will create a security event that can be used to investigate a specific SANS reported threat
 
